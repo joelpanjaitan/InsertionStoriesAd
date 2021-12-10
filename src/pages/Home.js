@@ -1,25 +1,14 @@
-// import logo from "./logo.svg";
-import "./App.css";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import "../App.css";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { Stack, Grid } from "@mui/material";
-import Storyone from "./pages/Storyone";
-function App() {
+// import Storyone from "./Storyone";
+function Home() {
   const navigate = useNavigate();
   function handleClick(e) {
     e.preventDefault();
     navigate("/progress");
   }
-  const handleClick2 = (e) => {
-    e.preventDefault();
-    navigate("/end");
-  };
   return (
     <div className="App">
       <div className="Grey-bg">
@@ -34,10 +23,10 @@ function App() {
             spacing={4}
           >
             <div className="circle" onClick={handleClick}>
-              <p class="text">Circle here 1</p>
+              <p class="text">Circle here</p>
             </div>
-            <div className="circle" onClick={handleClick2}>
-              <p class="text">Circle here 2</p>
+            <div className="circle">
+              <p class="text">Circle here</p>
             </div>
           </Stack>
         </Grid>
@@ -55,40 +44,8 @@ function App() {
             <p>Account</p>
           </Stack>
         </Grid>
-        {/* <Routes>
-          <Route path="/progress" element={<Storyone />} />
-          <Route path="/about" element={<About />} />
-        </Routes> */}
       </div>
     </div>
   );
 }
-
-function Progress() {
-  return (
-    <>
-      <main>
-        <h2>Homepage!</h2>
-        <p>You can do this, I believe in you.</p>
-      </main>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
-    </>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <main>
-        <h2>About?</h2>
-        <p>That feels like an existential question, don't you think?</p>
-      </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
-  );
-}
-export default App;
+export default Home;
